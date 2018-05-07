@@ -10,6 +10,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     bash \
     openssl \
     python \
+    py-pip \
     git
 
 # GCloud SDK
@@ -28,6 +29,10 @@ RUN curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | 
 
 # Docker credential
 RUN gcloud components install docker-credential-gcr
+
+# add docker-compose
+RUN pip install docker-compose
+    
 
 
 CMD ["/bin/bash"]
