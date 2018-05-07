@@ -27,10 +27,7 @@ RUN curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | 
 
 
 # Docker credential
-RUN go get github.com/GoogleCloudPlatform/docker-credential-gcr && \
-    cd $GOPATH/src/github.com/GoogleCloudPlatform/docker-credential-gcr && \
-    make && \
-    mv ./bin/docker-credential-gcr /usr/bin/docker-credential-gcr
+RUN gcloud components install docker-credential-gcr
 
 
 CMD ["/bin/bash"]
