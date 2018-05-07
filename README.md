@@ -7,7 +7,7 @@ To authenticate towards the services you may either re-build the image redefinin
 ## sample usage (runtime):
 
 ```bash
-$ docker run -it  InteractiveObject/gcloud-kubectl-helm
+$ docker run -it  ioteam/gcloud-kubectl-helm
 ```
 
 ## Updates
