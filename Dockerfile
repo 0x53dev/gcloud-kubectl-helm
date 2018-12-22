@@ -12,6 +12,8 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     openssh-client \
     python \
     py-pip \
+    nodejs-current \
+    yarn \
     jq \
     git
 
