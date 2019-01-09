@@ -15,6 +15,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     nodejs-current \
     yarn \
     jq \
+    kubectx \
     git
 
 # GCloud SDK
