@@ -16,6 +16,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     yarn \
     jq \
     kubectx \
+    qemu-user \
     git
 
 # GCloud SDK
