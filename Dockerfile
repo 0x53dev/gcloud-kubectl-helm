@@ -2,7 +2,7 @@ FROM google/cloud-sdk:alpine
 
 WORKDIR /root
 
-RUN apk update && apk add ca-certificates docker openssl py2-pip jq nodejs-current npm yarn && rm -rf /var/cache/apk/*
+RUN apk --update add ca-certificates docker openssl py2-pip jq nodejs-current npm yarn && rm -rf /var/cache/apk/*
 RUN gcloud components install kubectl -q --no-user-output-enabled && gcloud components install docker-credential-gcr -q --no-user-output-enabled
 
 # Helm
