@@ -38,6 +38,8 @@ RUN gcloud components install docker-credential-gcr
 # add docker-compose
 RUN pip install docker-compose
 
+RUN npm install firebase-tools -g
+
 ## For SSH
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
 
