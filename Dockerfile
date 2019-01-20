@@ -11,7 +11,7 @@ RUN helm init --client-only
 
 # add docker-compose
 RUN pip install --upgrade pip && pip install docker-compose
-RUN npm install firebase-tools appcenter-cli @sentry/cli -g
+RUN npm install firebase-tools appcenter-cli @sentry/cli -g --unsafe-perm
 
 ## For SSH
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
