@@ -40,7 +40,7 @@ RUN apk --no-cache add \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64 && \
     pip install docker-compose && \
-    npm install firebase-tools appcenter-cli @sentry/cli semver -g --unsafe-perm && \
+    npm install firebase-tools appcenter-cli @sentry/cli semver newman -g --unsafe-perm && \
     rm -rf /var/cache/apk/*
     
 VOLUME ["/root/.config"]
