@@ -8,7 +8,7 @@ ARG HELM_VERSION=2.12.0
 ENV HELM_VERSION=$HELM_VERSION
 
 ENV HELM_BASE_URL="https://storage.googleapis.com/kubernetes-helm"
-ENV HELM_TAR_FILE="helm-v${VERSION}-linux-amd64.tar.gz"
+ENV HELM_TAR_FILE="helm-v${HELM_VERSION}-linux-amd64.tar.gz"
 
 
 ENV PATH /google-cloud-sdk/bin:$PATH
@@ -35,7 +35,7 @@ RUN apk --no-cache add \
     gcloud components install kubectl -q --no-user-output-enabled  && \
     gcloud components install docker-credential-gcr -q --no-user-output-enabled  && \
     gcloud --version && \
-    curl -L ${BASE_URL}/${TAR_FILE} | tar xvz && \
+    curl -L ${HELM_BASE_URL}/${HELM_TAR_FILE} | tar xvz && \
     mv linux-amd64/helm /usr/bin/helm && \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64 && \
