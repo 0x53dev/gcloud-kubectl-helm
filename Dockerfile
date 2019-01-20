@@ -2,14 +2,13 @@ FROM google/cloud-sdk:alpine
 
 WORKDIR /root
 
-RUN apk --update add jq yarn
-RUN gcloud components install  docker-credential-gcr kubectl
+RUN apk update && apk add ca-certificates openssl jq yarn && rm -rf /var/cache/apk/*
+RUN gcloud components install kubectl -q --no-user-output-enabled
+RUN gcloud components install docker-credential-gcr -q --no-user-output-enabled
 
 # Helm
 RUN curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-
-# Docker credential
-RUN gcloud components install docker-credential-gcr
+RUN helm init --client-only
 
 # add docker-compose
 RUN pip install docker-compose
