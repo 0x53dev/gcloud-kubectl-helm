@@ -3,13 +3,23 @@ FROM mhart/alpine-node:10
 ARG CLOUD_SDK_VERSION=229.0.0
 ENV CLOUD_SDK_VERSION=$CLOUD_SDK_VERSION
 
+
+ARG HELM_VERSION=2.12.0
+ENV HELM_VERSION=$HELM_VERSION
+
+ENV HELM_BASE_URL="https://storage.googleapis.com/kubernetes-helm"
+ENV HELM_TAR_FILE="helm-v${VERSION}-linux-amd64.tar.gz"
+
+
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN apk --no-cache add \
         curl \
         python \
+        py-pip \
         py-crcmod \
         bash \
         libc6-compat \
+        openssl \
         openssh-client \
         git \
         docker \
@@ -25,17 +35,15 @@ RUN apk --no-cache add \
     gcloud components install kubectl -q --no-user-output-enabled  && \
     gcloud components install docker-credential-gcr -q --no-user-output-enabled  && \
     gcloud --version && \
+    curl -L ${BASE_URL}/${TAR_FILE} | tar xvz && \
+    mv linux-amd64/helm /usr/bin/helm && \
+    chmod +x /usr/bin/helm && \
+    rm -rf linux-amd64 && \
+    pip install docker-compose && \
+    npm install firebase-tools appcenter-cli @sentry/cli semver -g --unsafe-perm && \
     rm -rf /var/cache/apk/*
     
 VOLUME ["/root/.config"]
-
-# Helm
-RUN curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-RUN helm init --client-only
-
-# add docker-compose
-RUN pip install --upgrade pip && pip install docker-compose
-RUN npm install firebase-tools appcenter-cli @sentry/cli semver -g --unsafe-perm
 
 ## For SSH
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
