@@ -16,6 +16,7 @@ RUN apk --no-cache add \
         curl \
         python \
         py-pip \
+        g++ \
         py-crcmod \
         bash \
         libc6-compat \
