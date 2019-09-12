@@ -15,14 +15,9 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 RUN apk --no-cache add \
         curl \
         python \
-        libffi-dev \
-        python2-dev \
-        openssl-dev \
         py-pip \
         py-crcmod \
         bash \
-        make \
-        g++ \
         libc6-compat \
         openssl \
         openssh-client \
@@ -47,7 +42,7 @@ RUN apk --no-cache add \
     rm -rf linux-amd64 && \
     pip install --upgrade pip && \
     pip install docker-compose && \
-    npm install firebase-tools appcenter-cli @sentry/cli semver newman balena-cli -g --unsafe-perm && \
+    npm install firebase-tools appcenter-cli @sentry/cli semver newman -g --unsafe-perm && \
     curl https://docs.google.com/uc\?id\=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA\&export\=download -o /google-cloud-sdk/bin/gdrive && \
     chmod +x /google-cloud-sdk/bin/gdrive && \
     rm -rf /var/cache/apk/*
