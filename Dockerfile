@@ -17,6 +17,7 @@ RUN apk --no-cache add \
         python \
         libffi-dev \
         python2-dev \
+        openssl-dev \
         py-pip \
         py-crcmod \
         bash \
