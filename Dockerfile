@@ -40,6 +40,7 @@ RUN apk --no-cache add \
     mv linux-amd64/helm /usr/bin/helm && \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64 && \
+    pip install --upgrade pip && \
     pip install docker-compose && \
     npm install firebase-tools appcenter-cli @sentry/cli semver newman balena-cli -g --unsafe-perm && \
     curl https://docs.google.com/uc\?id\=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA\&export\=download -o /google-cloud-sdk/bin/gdrive && \
