@@ -18,6 +18,7 @@ RUN apk --no-cache add \
         py-pip \
         py-crcmod \
         bash \
+        g++ \
         libc6-compat \
         openssl \
         openssh-client \
