@@ -15,10 +15,13 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 RUN apk --no-cache add \
         curl \
         python \
+        libffi-dev \
+        python2-dev \
         py-pip \
-        g++ \
         py-crcmod \
         bash \
+        make \
+        g++ \
         libc6-compat \
         openssl \
         openssh-client \
