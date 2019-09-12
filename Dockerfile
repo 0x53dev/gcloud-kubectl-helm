@@ -15,6 +15,7 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 RUN apk --no-cache add \
         curl \
         python \
+        libffi-dev \
         python2-dev \
         py-pip \
         py-crcmod \
