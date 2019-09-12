@@ -20,6 +20,7 @@ RUN apk --no-cache add \
         py-pip \
         py-crcmod \
         bash \
+        make \
         g++ \
         libc6-compat \
         openssl \
