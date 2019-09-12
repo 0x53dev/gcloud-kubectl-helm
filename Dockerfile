@@ -41,7 +41,7 @@ RUN apk --no-cache add \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64 && \
     pip install docker-compose && \
-    npm install firebase-tools appcenter-cli @sentry/cli semver newman -g --unsafe-perm && \
+    npm install firebase-tools appcenter-cli @sentry/cli semver newman balena-cli -g --unsafe-perm && \
     curl https://docs.google.com/uc\?id\=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA\&export\=download -o /google-cloud-sdk/bin/gdrive && \
     chmod +x /google-cloud-sdk/bin/gdrive && \
     rm -rf /var/cache/apk/*
