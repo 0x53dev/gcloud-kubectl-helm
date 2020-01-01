@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:latest
+FROM alpine:edge
 
 ARG CLOUD_SDK_VERSION=229.0.0
 ENV CLOUD_SDK_VERSION=$CLOUD_SDK_VERSION
@@ -26,6 +26,7 @@ RUN apk --no-cache add \
         openssl \
         openssh-client \
         git \
+        nodejs \
         docker \
         jq \
         mongodb \
