@@ -11,6 +11,7 @@ ENV HELM_TAR_FILE="helm-v${HELM_VERSION}-linux-amd64.tar.gz"
 
 
 ENV PATH /google-cloud-sdk/bin:$PATH
+RUN apk add --no-cache mongodb
 RUN apk --no-cache add \
         curl \
         python \
@@ -29,7 +30,6 @@ RUN apk --no-cache add \
         nodejs \
         docker \
         jq \
-        mongodb \
         gnupg \
     && curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
