@@ -3,13 +3,11 @@ FROM mhart/alpine-node:latest
 ARG CLOUD_SDK_VERSION=229.0.0
 ENV CLOUD_SDK_VERSION=$CLOUD_SDK_VERSION
 
-
 ARG HELM_VERSION=2.12.0
 ENV HELM_VERSION=$HELM_VERSION
 
 ENV HELM_BASE_URL="https://storage.googleapis.com/kubernetes-helm"
 ENV HELM_TAR_FILE="helm-v${HELM_VERSION}-linux-amd64.tar.gz"
-
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN apk --no-cache add \
