@@ -29,6 +29,7 @@ RUN apk --no-cache add \
         git \
         nodejs \
         npm \
+        yarn \
         docker \
         mongodb-tools \
         jq \
